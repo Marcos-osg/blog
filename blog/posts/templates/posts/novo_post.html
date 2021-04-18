@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Nova postagem |{% endblock %}
+{% load widget_tweaks %}
+{% block main %}
+<div class="container-fluid">
+    <form class="form-floating" action="" method="POST">
+        {% csrf_token %}
+        <h1 style="text-align:center" class="text">Nova publicação</h1>
+        <div class="form-row align-itens-center">
+            <label class="text mt-2">Titulo</label>
+            {% render_field post.titulo_post class="form-control" %}
+            <label class="text mt-2">Conteudo</label>
+            {% render_field post.conteudo_post class="form-control" %}
+            <label class="text mt-2">Autor</label>
+            {% render_field post.autor_post class="form-control" %}
+            <label class="text mt-2">Data publicação</label>
+            {% render_field post.data_post class="form-control" %}
+            <label class="text mt-2">Excerto</label>
+            {% render_field post.excerto_post class="form-control" %}
+            <label class="text mt-2">Categoria</label>
+            {% render_field post.categoria_post class="form-control" %}
+        </div>
+        <button style="margin-top: 10px;" class="btn btn-success" type="submit">Salvar</button>
+    </form>
+</div>
+{% endblock %}
